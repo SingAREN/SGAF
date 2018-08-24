@@ -14,10 +14,10 @@
 
 ## <a name="1">1.</a> Introduction 
 
-There is a lot of documentation on how to install a Shibboleth SP, covering Shibboleth 2.x - notably:
-- Understanding Shibboleth: how it all fits together: [https://wiki.shibboleth.net/confluence/display/SHIB2/FlowsAndConfig](https://wiki.shibboleth.net/confluence/display/SHIB2/FlowsAndConfig) (useful for terminology and understanding how the Shibboleth SP uses session cookies)
-- Installation: [https://wiki.shibboleth.net/confluence/display/SHIB2/Installation](https://wiki.shibboleth.net/confluence/display/SHIB2/Installation) (for installing on Linux, Mac, Solaris, Windows or for Java servlets)
-- [https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPConfigurationElements](https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPConfigurationElements)
+There is a lot of documentation on how to install a Shibboleth SP, covering Shibboleth 3.0 - notably:
+- Understanding Shibboleth: how it all fits together: [https://wiki.shibboleth.net/confluence/display/CONCEPT/FlowsAndConfig](https://wiki.shibboleth.net/confluence/display/CONCEPT/FlowsAndConfig) (useful for terminology and understanding how the Shibboleth SP uses session cookies)
+- Installation: [https://wiki.shibboleth.net/confluence/display/SP3/Installation](https://wiki.shibboleth.net/confluence/display/SP3/Installation) (for installing on Linux, Mac, Solaris, Windows or for Java servlets)
+- [https://wiki.shibboleth.net/confluence/display/SP3/Configuration](https://wiki.shibboleth.net/confluence/display/SP3/Configuration)
 
 This page documents a simple sequence of steps to get a Shibboleth SP working in the Singapore Access Federation (SGAF) environment.
 
@@ -137,7 +137,7 @@ version:
 
 ### Attribute-policy.xml
 The `attribute-policy.xml` file describes rules to filter out attributes or let them pass.
-More information on how to set up these rules is described at [https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAttributeFilter](https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAttributeFilter).
+More information on how to set up these rules is described at [https://wiki.shibboleth.net/confluence/display/SP3/AttributeFilter](https://wiki.shibboleth.net/confluence/display/SP3/AttributeFilter).
 
 ### Logging
 There are 2 different Shibboleth-related log files you can access for troubleshooting.
@@ -168,7 +168,7 @@ You can protect a resource with Shibboleth by configuring your Apache webserver.
 		</Location>
 
 More information on how to protect your resource can be found
-on [https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPhtaccess](https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPhtaccess).
+on [https://wiki.shibboleth.net/confluence/display/SP3/htaccess](https://wiki.shibboleth.net/confluence/display/SP3/htaccess).
 For an example on how to implement Dual Login with Shibboleth Lazy Sessions, see [KU Leuven's website](https://aai.kuleuven.be/shibboleth/examples/lazysessions/).
 
 ## <a name="7">7.</a> Finishing up
