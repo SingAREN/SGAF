@@ -1,0 +1,33 @@
+- when update:
+    - load:
+       #- http://mds.edugain.org//edugain-v1.xml 1D:70:87:71:A7:6E:EA:D8:00:11:CC:55:35:67:3E:8C:19:1F:62:C0
+       - http://sgaf-resource-registry/rr3/metadata/federation/sgaf-edugain-export/metadata.xml
+       - http://sgaf-resource-registry/rr3/metadata/federation/sgaf-local/metadata.xml
+    - select as /sgaf-export:
+       - http://sgaf-resource-registry/rr3/metadata/federation/sgaf-edugain-export/metadata.xml
+    - select as /sgaf-local:
+       - http://sgaf-resource-registry/rr3/metadata/federation/sgaf-local/metadata.xml
+#    - select as /sgaf-edugain:
+#       - http://mds.edugain.org//edugain-v1.xml!md:EntityDescriptor[md:SPSSODescriptor]
+    - break
+- when request:
+    - select
+    - pipe:
+        - when accept application/xml:
+             - xslt:
+                 stylesheet: tidy.xsl
+             - pubinfo:
+                publisher: https://ds.sgaf.org.sg
+             - first
+             - finalize:
+                cacheDuration: PT5H
+                validUntil: P7D
+             - sign:
+                 key: /metadata/keypairs/sign.key 
+                 cert: /metadata/keypairs/sign.crt
+             - emit application/xml
+             - break
+        - when accept application/json:
+             - discojson
+             - emit application/json
+             - break
